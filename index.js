@@ -32,7 +32,7 @@ app.post('/fetch-products', async (req, res) => {
       let products = []
       let index = 0
       const urls = result.urlset.url
-      while (products.length < 6 && index < urls.length) {
+      while (products.length < 5 && index < urls.length) {
         const urlObj = urls[index]
         const imageObj = urlObj['image:image'] ? urlObj['image:image'][0] : {}
         const product = {
@@ -48,7 +48,7 @@ app.post('/fetch-products', async (req, res) => {
 
         index++
       }
-      while (products.length < 6) {
+      while (products.length < 5) {
         products.push({
           link: '#',
           image: 'path/to/placeholder-image.jpg', // Path to a placeholder image
