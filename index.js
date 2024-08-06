@@ -14,6 +14,10 @@ app.use(cors())
 
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY })
 
+app.get('/', (req, res) => {
+  res.send('Home!')
+})
+
 app.post('/fetch-products', async (req, res) => {
   const { sitemapUrl } = req.body
 
